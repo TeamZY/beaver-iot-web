@@ -16,6 +16,8 @@
     "setting.integration.openapi_frequency_helper_text": "范围：30秒 - 86400秒",
     "setting.integration.openapi_frequency_of_request": "请求频率",
     "setting.integration.openapi_helper_text": "通过OpenAPI定期主动拉取设备信息和设备遥测数据。",
+  "setting.integration.param_access_key": "AWS Key",
+  "setting.integration.param_secret_key": "AWS 密钥",
     "setting.integration.param_client_id": "客户端ID",
     "setting.integration.param_client_secret": "客户端密钥",
     "setting.integration.param_server_address": "服务器地址",

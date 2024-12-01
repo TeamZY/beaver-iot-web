@@ -17,6 +17,7 @@
     "dashboard.label_rename": "Rename",
     "dashboard.label_sum_value": "Sum. Value",
     "dashboard.plugin.trigger_confirm_text": "Is the execution of the operation confirmed?",
+    "dashboard.plugin_class_meeting_room": "Meeting Room",
     "dashboard.plugin_class_data_card": "Data Card",
     "dashboard.plugin_class_data_chart": "Data Charts",
     "dashboard.plugin_class_operate": "Operable Widgets",
