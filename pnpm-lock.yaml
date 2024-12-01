@@ -76,7 +76,7 @@ importers:
         version: 7.18.0(@emotion/react@11.13.3)(@emotion/styled@11.13.0)(@mui/material@6.1.0)(@mui/system@6.1.0)(@types/react@18.3.5)(react-dom@18.3.1)(react@18.3.1)
       '@mui/x-date-pickers':
         specifier: ^7.18.0
-        version: 7.18.0(@emotion/react@11.13.3)(@emotion/styled@11.13.0)(@mui/material@6.1.0)(@mui/system@6.1.0)(@types/react@18.3.5)(dayjs@1.11.13)(react-dom@18.3.1)(react@18.3.1)
+        version: 7.18.0(@emotion/react@11.13.3)(@emotion/styled@11.13.0)(@mui/material@6.1.0)(@mui/system@6.1.0)(@types/react@18.3.5)(date-fns@4.1.0)(dayjs@1.11.13)(react-dom@18.3.1)(react@18.3.1)
       ahooks:
         specifier: ^3.8.1
         version: 3.8.1(react@18.3.1)
@@ -86,6 +86,12 @@ importers:
       chart.js:
         specifier: ^4.4.4
         version: 4.4.4
+      chartjs-adapter-date-fns:
+        specifier: ^3.0.0
+        version: 3.0.0(chart.js@4.4.4)(date-fns@4.1.0)
+      chartjs-plugin-zoom:
+        specifier: ^2.1.0
+        version: 2.1.0(chart.js@4.4.4)
       classnames:
         specifier: ^2.5.1
         version: 2.5.1
@@ -333,7 +339,7 @@ importers:
         version: 6.1.0(@emotion/react@11.13.3)(@emotion/styled@11.13.0)(@types/react@18.3.5)(react-dom@18.3.1)(react@18.3.1)
       '@mui/x-date-pickers':
         specifier: ^7.18.0
-        version: 7.18.0(@emotion/react@11.13.3)(@emotion/styled@11.13.0)(@mui/material@6.1.0)(@mui/system@6.1.0)(@types/react@18.3.5)(dayjs@1.11.13)(react-dom@18.3.1)(react@18.3.1)
+        version: 7.18.0(@emotion/react@11.13.3)(@emotion/styled@11.13.0)(@mui/material@6.1.0)(@mui/system@6.1.0)(@types/react@18.3.5)(date-fns@4.1.0)(dayjs@1.11.13)(react-dom@18.3.1)(react@18.3.1)
       ahooks:
         specifier: ^3.8.1
         version: 3.8.1(react@18.3.1)
@@ -1733,7 +1739,7 @@ packages:
       - '@types/react'
     dev: false
 
-  /@mui/x-date-pickers@7.18.0(@emotion/react@11.13.3)(@emotion/styled@11.13.0)(@mui/material@6.1.0)(@mui/system@6.1.0)(@types/react@18.3.5)(dayjs@1.11.13)(react-dom@18.3.1)(react@18.3.1):
+  /@mui/x-date-pickers@7.18.0(@emotion/react@11.13.3)(@emotion/styled@11.13.0)(@mui/material@6.1.0)(@mui/system@6.1.0)(@types/react@18.3.5)(date-fns@4.1.0)(dayjs@1.11.13)(react-dom@18.3.1)(react@18.3.1):
     resolution: {integrity: sha512-12tXIoMj9vpS8fS/bS3kWPCoVrH38vNGCxgplI0vOnUrN9rJuYJz3agLPJe1S0xciTw+9W8ZSe3soaW+owoz1Q==}
     engines: {node: '>=14.0.0'}
     peerDependencies:
@@ -1779,6 +1785,7 @@ packages:
       '@mui/x-internals': 7.18.0(@types/react@18.3.5)(react@18.3.1)
       '@types/react-transition-group': 4.4.11
       clsx: 2.1.1
+      date-fns: 4.1.0
       dayjs: 1.11.13
       prop-types: 15.8.1
       react: 18.3.1
@@ -2163,6 +2170,10 @@ packages:
     dependencies:
       '@types/node': 20.16.5
     dev: true
+
+  /@types/hammerjs@2.0.46:
+    resolution: {integrity: sha512-ynRvcq6wvqexJ9brDMS4BnBLzmr0e14d6ZJTEShTBWKymQiHwlAyGu0ZPEFI2Fh1U53F7tN9ufClWM5KvqkKOw==}
+    dev: false
 
   /@types/inquirer@8.2.10:
     resolution: {integrity: sha512-IdD5NmHyVjWM8SHWo/kPBgtzXatwPkfwzyP3fN1jF2g9BWt5WO+8hL2F4o2GKIYsU40PpqeevuUWvkS/roXJkA==}
@@ -2929,6 +2940,26 @@ packages:
       '@kurkle/color': 0.3.2
     dev: false
 
+  /chartjs-adapter-date-fns@3.0.0(chart.js@4.4.4)(date-fns@4.1.0):
+    resolution: {integrity: sha512-Rs3iEB3Q5pJ973J93OBTpnP7qoGwvq3nUnoMdtxO+9aoJof7UFcRbWcIDteXuYd1fgAvct/32T9qaLyLuZVwCg==}
+    peerDependencies:
+      chart.js: '>=2.8.0'
+      date-fns: '>=2.0.0'
+    dependencies:
+      chart.js: 4.4.4
+      date-fns: 4.1.0
+    dev: false
+
+  /chartjs-plugin-zoom@2.1.0(chart.js@4.4.4):
+    resolution: {integrity: sha512-7lMimfQCUaIJLhPJaWSAA4gw+1m8lyR3Wn+M3MxjHbM/XxRUnOxN7cM5RR9jUmxmyW0h7L2hZ8KhvUsqrFxy/Q==}
+    peerDependencies:
+      chart.js: '>=3.2.0'
+    dependencies:
+      '@types/hammerjs': 2.0.46
+      chart.js: 4.4.4
+      hammerjs: 2.0.8
+    dev: false
+
   /chokidar@3.6.0:
     resolution: {integrity: sha512-7VT13fmjotKpGipCW9JEQAusEPE+Ei8nl6/g4FBAmIm0GOOLMua9NDDo/DWp0ZAxCr3cPq5ZpBqmPAQgDda2Pw==}
     engines: {node: '>= 8.10.0'}
@@ -3321,6 +3352,10 @@ packages:
       call-bind: 1.0.7
       es-errors: 1.3.0
       is-data-view: 1.0.1
+
+  /date-fns@4.1.0:
+    resolution: {integrity: sha512-Ukq0owbQXxa/U3EGtsdVBkR1w7KOQ5gIBqdH2hkvknzZPYvBxb/aa6E8L7tmjFtkwZBu3UXBbjIgPo/Ez4xaNg==}
+    dev: false
 
   /dayjs@1.11.13:
     resolution: {integrity: sha512-oaMBel6gjolK862uaPQOVTA7q3TZhuSvuMQAAglQDOWYO9A91IrAOUJEyKVlqJlHE0vq5p5UXxzdPfMH/x6xNg==}
@@ -4518,6 +4553,11 @@ packages:
 
   /graphemer@1.4.0:
     resolution: {integrity: sha512-EtKwoO6kxCL9WO5xipiHTZlSzBm7WLT627TqC/uVRd0HKmq8NXyebnNYxDoBi7wt8eTWrUrKXCOVaFq9x1kgag==}
+
+  /hammerjs@2.0.8:
+    resolution: {integrity: sha512-tSQXBXS/MWQOn/RKckawJ61vvsDpCom87JgxiYdGwHdOa0ht0vzUWDlfioofFCRU0L+6NGDt6XzbgoJvZkMeRQ==}
+    engines: {node: '>=0.8.0'}
+    dev: false
 
   /hard-rejection@2.1.0:
     resolution: {integrity: sha512-VIZB+ibDhx7ObhAe7OVtoEbuP4h/MuOTHJ+J8h/eBXotJYl0fBgR72xDFCKgIh22OJZIOVNxBMWuhAr10r8HdA==}

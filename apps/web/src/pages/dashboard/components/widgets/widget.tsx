@@ -1,8 +1,10 @@
 import { Suspense, useCallback, useRef } from 'react';
+import classnames from 'classnames';
 import {
     DeleteOutlineIcon as DeleteOutline,
     EditOutlinedIcon as EditOutlined,
 } from '@milesight/shared/src/components';
+import { useTheme } from '@milesight/shared/src/hooks';
 import plugins from '@/plugin/plugins';
 import { RenderView } from '@/plugin/render';
 import { WidgetDetail } from '@/services/http/dashboard';
@@ -16,6 +18,7 @@ interface WidgetProps {
 }
 
 const Widget = (props: WidgetProps) => {
+    const { theme } = useTheme();
     const { data, isEdit, onEdit, onDelete, mainRef } = props;
     const ComponentView = (plugins as any)[`${data.data.type}View`];
     const widgetRef = useRef<HTMLDivElement>(null);
@@ -27,12 +30,15 @@ const Widget = (props: WidgetProps) => {
     const handleDelete = useCallback(() => {
         onDelete(data);
     }, [data]);
-
+    // console.log(plugins, data.data.type, (plugins as any)[`${data.data.type}`]);
     return (
         <div className="dashboard-content-widget">
             {isEdit && (
                 <div
-                    className={`dashboard-content-widget-icon ${isEdit ? 'dashboard-content-widget-icon-edit' : ''}`}
+                    className={classnames('dashboard-content-widget-icon', {
+                        'dashboard-content-widget-icon-edit': isEdit,
+                        [`dashboard-content-widget-icon-${theme}`]: true,
+                    })}
                 >
                     <span className="dashboard-content-widget-icon-img" onClick={handleEdit}>
                         <EditOutlined />

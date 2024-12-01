@@ -93,10 +93,10 @@
     "view": [
         {
             "tag": "div",
+            "class": "trigger-view",
             "themes": {
                 "default": {
-                    "class": "trigger-view",
-                    "style": "background: #fff"
+                    "class": "trigger-view-light"
                 }
             },
             "children": [

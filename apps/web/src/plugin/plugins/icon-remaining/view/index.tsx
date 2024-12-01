@@ -21,7 +21,6 @@ const View = (props: Props) => {
         const { rawData } = entity || {};
         const { entityValueAttribute } = rawData || {};
         const { min, max } = entityValueAttribute || {};
-
         const { value } = aggregateHistoryData || {};
         if (!value) return 0;
 
@@ -51,7 +50,7 @@ const View = (props: Props) => {
             </div>
             <div className="ms-icon-remaining__percent">{percent}%</div>
             <div className="ms-icon-remaining__content">
-                <RemainChart Icon={Icon} iconColor={iconColor} percent={percent} />
+                <RemainChart Icon={Icon} iconColor={iconColor} percent={100 - percent} />
             </div>
         </div>
     );
